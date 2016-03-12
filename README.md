@@ -37,7 +37,7 @@ docker run --name rsync-container --volume <DirectoryToSync> -e DAEMON=docker tj
 
 On your local host, run
 ```
-rsync -avz -e 'docker exec -i' . rsync-container:<DirectoryToSync>
+rsync --blocking-io -avz -e 'docker exec -i' . rsync-container:<DirectoryToSync>
 ```
 
 ## Customize run
